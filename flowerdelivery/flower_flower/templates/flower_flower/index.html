@@ -1,0 +1,28 @@
+{% extends 'flower_flower/layout.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+{% if error %}
+<div class="alert alert-danger text-center" role="alert">
+    {{ error }}
+</div>
+{% endif %}
+<div class="container">
+    <div class="row">
+        {% for flower in flowers %}
+            <div class="col-md-4"> <!-- Это определяет, сколько карточек будет в одном ряду. Например, 3 карточки на одном ряду, если использовать col-md-4 -->
+                <a href='/flowers/{{flower.id}}' class="text-decoration-none">
+                    <div class="card mb-4" style="width: 18rem;" width="300" name="{{flower.title}}">
+                        <img src="{{ flower.image }}" alt="фотку сьели гномы" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{flower.title}}</h5>
+                            <p class="card-text">{{flower.price}} ₽</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

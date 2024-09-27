@@ -1,0 +1,32 @@
+{% extends 'flower_flower/layout.html' %}
+
+{% block title %}Оформление заказа{% endblock %}
+
+{% block content %}
+<div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-5">
+            <h1>{{flower.title}}</h1>
+            <img src ={{flower.image}} alt="фотку сьели гномы" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+            <h1>{{flower.price}}</h1>
+            <p></p>
+        </div>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-5">
+        <h1>Оформить заказ</h1>
+        <form action="" method="post">
+        <div class="col-md-1">
+            {% csrf_token %}
+            <br>
+            <input class="mb-3" name="name" id="name" placeholder="Имя" required>
+            <input class="mb-3" type="email" name="email" id="email" placeholder="Email" required>
+            <input type="submit" class="btn btn-primary" value="Оформить заказ">
+        </div>
+    </form>
+    </div>
+</div>
+{% endblock %}

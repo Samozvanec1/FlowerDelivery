@@ -1,0 +1,29 @@
+{% extends 'flower_flower/layout.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+  {% block content %}
+      <div class="row">
+          <div class="col-md-1"></div> <!-- Это для отступа слева -->
+          <div class="col-md-5">
+               <a href="{% url 'index' %}" class="close-btn" ><img src="/static/image/close_button.png" alt="закрыть" class="img-fluid" width="35px"></a>
+              <h1>{{flower.title}}</h1>
+
+              <img src ={{flower.image}} alt="фотку сьели гномы" class="img-fluid">
+
+          </div>
+          <div class="col-md-6">
+              <br>
+              <br><br>
+              <br><br>
+              <br><br>
+              <br><br>
+              <br><br>
+              <br><br>
+              <h1>{{flower.price}} ₽</h1>
+              <br>
+              <a href="/buying/{{flower.id}}" class="btn btn-primary btn-lg">Купить</a></a>
+          </div>
+
+      </div>
+  {% endblock %}
