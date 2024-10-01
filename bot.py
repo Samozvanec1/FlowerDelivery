@@ -7,7 +7,17 @@ from aiogram.fsm.context import FSMContext
 from aiogram.types import Message, CallbackQuery
 from aiogram import F
 import asyncio
-from .models import User, Flower, Order
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'flowerdelivery.flowerdelivery.settings')
+
+import django
+
+django.setup()
+
+from flowerdelivery.flower_flower.models import User, Flower, Order
 from concurrent.futures import ThreadPoolExecutor
 from asgiref.sync import sync_to_async
 
